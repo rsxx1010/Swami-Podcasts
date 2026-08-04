@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swami Podcasts Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="static/style.css">
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true"></div>
+
+    <main class="shell">
+      <header class="hero">
+        <div class="hero-mark" aria-hidden="true">
+          <span class="hero-symbol">ॐ</span>
+        </div>
+        <div class="hero-text">
+          <p class="eyebrow">Bhagavad Gita &amp; Upanishad</p>
+          <h1>Swami Podcasts Chat</h1>
+          <p class="lead">Ask questions and discover quotes from the uploaded transcript library.</p>
+        </div>
+      </header>
+
+      <section class="panel">
+        <form id="chat-form" class="query-form">
+          <div class="field">
+            <label for="question">Your question</label>
+            <textarea
+              id="question"
+              name="question"
+              rows="4"
+              placeholder="Give me a quote about overcoming suffering."
+              required
+            ></textarea>
+          </div>
+
+          <div class="prompt-row" aria-label="Example questions">
+            <span class="prompt-label">Try:</span>
+            <button
+              type="button"
+              class="prompt-chip"
+              onclick="document.getElementById('question').value='Give me a quote about overcoming suffering.'"
+            >Overcoming suffering</button>
+            <button
+              type="button"
+              class="prompt-chip"
+              onclick="document.getElementById('question').value='What does Swami say about karma yoga?'"
+            >Karma yoga</button>
+            <button
+              type="button"
+              class="prompt-chip"
+              onclick="document.getElementById('question').value='Explain the nature of the Self in the Upanishads.'"
+            >Nature of the Self</button>
+            <button
+              type="button"
+              class="prompt-chip"
+              onclick="document.getElementById('question').value='Give me a random quote.';
+              document.getElementById('chat-form').requestSubmit();"
+            >Inspire me</button>
+          </div>
+
+          <div class="controls">
+            <div class="field field-inline">
+              <label for="collection">Source</label>
+              <select id="collection" name="collection">
+                <option value="all">All transcripts</option>
+                <option value="BhagavadGita">Bhagavad Gita</option>
+                <option value="Upanishad">Upanishad</option>
+              </select>
+            </div>
+            <button type="submit">
+              <span class="btn-label">Ask</span>
+            </button>
+          </div>
+        </form>
+
+        <section id="result" class="result" hidden>
+          <div class="result-header">
+            <h2>Answer</h2>
+          </div>
+          <div id="answer" class="answer"></div>
+          <div id="citations" class="citations"></div>
+        </section>
+      </section>
+
+      <footer class="footer">
+        <p>Answers are drawn from uploaded transcripts only.</p>
+      </footer>
+    </main>
+
+    <script src="static/api-config.js"></script>
+    <script src="static/app.js"></script>
+  </body>
+</html>
