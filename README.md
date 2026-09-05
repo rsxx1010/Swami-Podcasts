@@ -41,7 +41,7 @@ Open `http://127.0.0.1:8000`.
 ## Deploy the API to Render
 
 1. Push this repository to GitHub.
-2. In Render, create a new **Blueprint** from the GitHub repository. Render reads `render.yaml`.
+2. In Render, create a new **Web service** from the GitHub repository. Render reads `render.yaml`.
 3. In the Render service's Environment settings, set:
    - `PINECONE_API_KEY` to your real Pinecone key.
    - `ALLOWED_ORIGINS` to `https://YOUR_GITHUB_USERNAME.github.io`.

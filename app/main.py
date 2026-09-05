@@ -30,7 +30,6 @@ def _allowed_origins() -> list[str]:
     )
     return [origin.strip() for origin in configured_origins.split(",") if origin.strip()]
 
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_allowed_origins(),

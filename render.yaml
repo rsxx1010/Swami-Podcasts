@@ -10,6 +10,6 @@ services:
       - key: PINECONE_ASSISTANT_NAME
         value: swami-podcasts
       - key: PINECONE_MODEL
-        value: gpt-4o-mini
+        value: gpt-5
       - key: ALLOWED_ORIGINS
         sync: false
