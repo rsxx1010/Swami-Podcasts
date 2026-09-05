@@ -39,7 +39,7 @@ app.add_middleware(
 
 pc = Pinecone(api_key=os.environ["PINECONE_API_KEY"])
 ASSISTANT_NAME = os.environ.get("PINECONE_ASSISTANT_NAME", "swami-podcasts")
-PINECONE_MODEL = os.environ.get("PINECONE_MODEL", "gpt-4o-mini")
+PINECONE_MODEL = os.environ.get("PINECONE_MODEL", "gpt-5-mini")
 
 class ChatRequest(BaseModel):
     question: str = Field(min_length=1, max_length=2000)
